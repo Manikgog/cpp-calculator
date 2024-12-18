@@ -1,16 +1,15 @@
-﻿#include <iostream>
+#include <iostream>
 #include <string>
 #include <cmath>
 #include <vector>
 
-int main()
-{
+void RunCalculatorCycle() {
     std::string str_input;
     std::vector<std::string> strings;
     int j = 0;
     bool is_saved = false;
     while (std::cin >> str_input) {
-        
+
         if (str_input == "q") {
             break;
         }
@@ -36,7 +35,7 @@ int main()
             }
             catch (const std::invalid_argument&) {
                 std::cerr << "Error: Numeric operand expected" << std::endl;
-                return 0;
+                return;
             }
             strings.push_back(str_input);
             j++;
@@ -46,7 +45,7 @@ int main()
             if (str_input != "+" && str_input != "-" && str_input != "*" && str_input != "**" &&
                 str_input != "/" && str_input != ":" && str_input != "s" && str_input != "l") {
                 std::cerr << "Error: Unknown token " << str_input << std::endl;
-                return 0;
+                return;
             }
             else {
                 strings.push_back(str_input);
@@ -54,7 +53,7 @@ int main()
             }
             continue;
         }
-        
+
     }
 
     std::vector<double> results;
@@ -75,7 +74,7 @@ int main()
         else if (s == "l") {
             if (is_memory_cell_empty) {
                 std::cerr << "Error: Memory is empty" << std::endl;
-                return 0;
+                return;
             }
             result = memory_cell;
             continue;
