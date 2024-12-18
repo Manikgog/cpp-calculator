@@ -1,7 +1,5 @@
 ﻿#include "calculator.h"
 
-int main()
-{
+int main() {
     RunCalculatorCycle();
 }
-
