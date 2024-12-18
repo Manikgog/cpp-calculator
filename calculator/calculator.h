@@ -5,9 +5,9 @@
 
 using Number = double;
 
-double Action(double number_1, double number_2, std::string operation);
+Number Action(Number number_1, Number number_2, std::string operation);
 
-double Round(double number);
+Number Round(Number number);
 
 bool ReadNumber(Number& result);
 
@@ -15,4 +15,4 @@ std::string ReadOperator();
 
 bool RunCalculatorCycle();
 
-void Print(const std::vector<double>& results);
+void Print(const std::vector<Number>& results);

@@ -95,7 +95,7 @@ std::string ReadOperator() {
     }
 }
 
-double Action(double number_1, double number_2, std::string operation) {
+Number Action(Number number_1, Number number_2, std::string operation) {
     if (operation == "+") {
         number_1 += number_2;
     }
@@ -117,9 +117,9 @@ double Action(double number_1, double number_2, std::string operation) {
     return Round(number_1);
 }
 
-double Round(double number) {
+Number Round(Number number) {
     int n = (int)number;
-    double d = (number - n) * 10;
+    Number d = (number - n) * 10;
     if (d < 0) {
         d *= -1;
         if (d - (int)d > 0.5) {
@@ -142,7 +142,7 @@ double Round(double number) {
 }
 
 void Print(const std::vector<double>& results) {
-    for (double d : results) {
+    for (Number d : results) {
         std::cout << d << std::endl;
     }
 }
