@@ -83,19 +83,16 @@ bool ReadNumber(Number& result) {
 std::string ReadOperator() {
     std::string str_input;
     std::cin >> str_input;
-
-    if (str_input == "=" || str_input == "s" || str_input == "l" || str_input == "q" || str_input == "c" ||
-        str_input == "+" || str_input == "-" || str_input == "*" || str_input == "/" || str_input == "**" ||
-        str_input == ":") {
-        return str_input;
-    }
-    else {
+    if (str_input != "=" && str_input != "s" && str_input != "l" && str_input != "q" && str_input != "c" &&
+        str_input != "+" && str_input != "-" && str_input != "*" && str_input != "/" && str_input != "**" &&
+        str_input != ":") {
         std::cerr << "Error: Unknown token " << str_input << std::endl;
         throw std::exception();
     }
+    return str_input;
 }
 
-Number Action(Number number_1, Number number_2, std::string operation) {
+Number Action(Number number_1, Number number_2, const std::string& operation) {
     if (operation == "+") {
         number_1 += number_2;
     }

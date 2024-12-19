@@ -5,7 +5,7 @@
 
 using Number = double;
 
-Number Action(Number number_1, Number number_2, std::string operation);
+Number Action(Number number_1, Number number_2, const std::string& operation);
 
 Number Round(Number number);
 
